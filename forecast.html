@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Relief Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <h1>ReliefConnect</h1>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <button class="get-started">Get Started</button>
+    </nav>
+
+    <!-- Prediction Form Section -->
+    <div class="form-container">
+        <h2 class="form-title">Disaster Relief Prediction</h2>
+        <form method="POST" action="/predict">
+            <label for="population" class="form-label">Population:</label>
+            <input type="number" id="population" name="population" class="form-input" required>
+            
+            <label for="past_cases" class="form-label">Past Cases:</label>
+            <input type="number" id="past_cases" name="past_cases" class="form-input" required>
+            
+            <button type="submit" class="form-button">Predict Needs</button>
+        </form>
+    </div>
+
+    <!-- Prediction Results -->
+    {% if food is not none %}
+    <div class="results-container">
+        <h3 class="results-title">Predicted Needs:</h3>
+        <p class="results-text"><strong>Food Demand:</strong> {{ food }}</p>
+        <p class="results-text"><strong>Medical Demand:</strong> {{ medical }}</p>
+        <p class="results-text"><strong>Shelter Demand:</strong> {{ shelter }}</p>
+    </div>
+    {% endif %}
+
+    {% if error %}
+    <p class="error-message">Error: {{ error }}</p>
+    {% endif %}
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We provide disaster relief solutions using AI & ML to forecast needs efficiently.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Help Center</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                    <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                    <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 ReliefConnect. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
