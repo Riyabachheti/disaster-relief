@@ -49,7 +49,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 80px 10%;
+    padding: 70px 10%;
     background-color: #f8fafc;
 }
 
@@ -57,8 +57,14 @@ body {
 .about-text {
     flex: 1;
     max-width: 50%;
+    margin-right: 20px;
 }
 
+.about-cards {
+    flex: 1;
+    max-width: 50%;
+    margin-right: 20px;
+}
 /* Feature Cards Container */
 .about-features {
     flex: 1;
@@ -109,21 +115,26 @@ body {
 }
 
 /* Features Grid */
-.about-features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-}
-
-/* Feature Cards */
+/* Reduce the width of feature cards further */
 .feature-card {
+    width: 43%; /* Decrease width slightly more */
+    margin: 0 auto; /* Center the card */
     background-color: white;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* Center and adjust spacing */
+.about-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 19px; /* Reduce gap slightly for a tighter layout */
+}
+
+
 .feature-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -156,7 +167,7 @@ body {
 
 .modules-section {
     font-family: Arial, sans-serif;    
-    background-color: #f8f9fc;
+    background-color: #e9e9eb;
     text-align: center;
     padding: 50px 20px;
 }
@@ -182,67 +193,42 @@ body {
     margin: 0 auto;
 }
 
+/* module section */
 .modules-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
-    max-width: 1000px;
-    margin: 40px auto;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .module-card {
-    background: white;
-    padding: 20px;
+    background: #fff;
     border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    transition: transform 0.3s ease-in-out;
-}
-
-.module-card:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 .module-header {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 10px;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
-.module-header i {
-    font-size: 22px;
+.module-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 15px;
 }
 
-.module-header h3 {
-    margin: 0;
-    font-size: 18px;
-    color: #333;
-}
-
-.module-card p {
-    color: #666;
-    font-size: 14px;
-}
-
-.features-list {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0;
-}
-
-.features-list li {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    color: #444;
-    padding: 5px 0;
-}
-
-.features-list i {
-    color: #007bff;
-}
 
 
 /* Legend Styling */
