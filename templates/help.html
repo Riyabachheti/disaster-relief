@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Help & Precautions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styles.css') }}">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1 {
+            color: #e74c3c;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .section {
+            margin: 40px auto;
+            width: 90%;
+            max-width: 1200px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #3498db;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .precaution-list {
+            list-style-type: disc;
+            padding-left: 20px;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #3498db, #3498db);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            text-align: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg,#3498db, #3498db);
+            transform: translateY(-2px);
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .dropdown select {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            color: #333;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            padding: 10px 15px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .active, .collapsible:hover {
+            background-color: #3498db;
+        }
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Disaster Help & Precautions</h1>
+
+    <!-- Dropdown Section -->
+    <div class="section">
+        <h2>Choose a Disaster to Learn More</h2>
+        <div class="dropdown">
+            <select id="disasterSelect" onchange="showDisasterInfo()">
+                <option value="">Select a Disaster</option>
+                <option value="earthquake">Earthquake</option>
+                <option value="storm">Storm</option>
+                <option value="cyclone">Cyclone</option>
+                <option value="flood">Flood</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Earthquake Section -->
+    <div id="earthquake" class="section" style="display:none;">
+        <h2>Earthquake</h2>
+        <p>Earthquakes can occur without warning. It is important to be prepared and follow safety precautions to minimize damage and injuries.</p>
+        <h3>Precautions:</h3>
+        <ul class="precaution-list">
+            <li>Drop, cover, and hold on during the shaking.</li>
+            <li>Stay indoors during shaking; avoid windows and heavy furniture.</li>
+            <li>If outside, move to an open area away from buildings, trees, and power lines.</li>
+            <li>If driving, pull over and remain in the car until shaking stops.</li>
+            <li>After the shaking stops, check for hazards like gas leaks and electrical damage.</li>
+        </ul>
+    </div>
+
+    <!-- Storm Section -->
+    <div id="storm" class="section" style="display:none;">
+        <h2>Storm</h2>
+        <p>Storms, particularly severe ones, can bring heavy rains, strong winds, and lightning. Being prepared is essential to protect yourself and your property.</p>
+        <h3>Precautions:</h3>
+        <ul class="precaution-list">
+            <li>Stay indoors and away from windows during the storm.</li>
+            <li>If possible, move to a lower floor to avoid flooding.</li>
+            <li>Keep emergency supplies, including a flashlight and battery-powered radio, in case of power outages.</li>
+            <li>Avoid using electrical appliances during the storm to prevent electric shock.</li>
+            <li>After the storm, avoid standing water and check for downed power lines.</li>
+        </ul>
+    </div>
+
+    <!-- Cyclone Section -->
+    <div id="cyclone" class="section" style="display:none;">
+        <h2>Cyclone</h2>
+        <p>Cyclones are powerful storms with high winds and heavy rainfall. Cyclones can cause massive damage, so it's important to be prepared and follow evacuation orders if necessary.</p>
+        <h3>Precautions:</h3>
+        <ul class="precaution-list">
+            <li>Stay tuned to weather updates and evacuation notices.</li>
+            <li>Secure windows and doors to minimize damage from strong winds.</li>
+            <li>If you live in a flood-prone area, evacuate before the cyclone arrives.</li>
+            <li>Store emergency supplies such as food, water, and first aid kits.</li>
+            <li>Avoid coastal areas and low-lying regions at risk of storm surges.</li>
+        </ul>
+    </div>
+
+    <!-- Flood Section -->
+    <div id="flood" class="section" style="display:none;">
+        <h2>Flood</h2>
+        <p>Flooding can happen after heavy rainfall or when rivers overflow. It can lead to widespread damage. It's important to stay informed and take precautions if flooding is imminent.</p>
+        <h3>Precautions:</h3>
+        <ul class="precaution-list">
+            <li>If you live in a flood-prone area, know your evacuation routes.</li>
+            <li>Keep a disaster kit with essentials such as water, food, and medication in a waterproof container.</li>
+            <li>Move to higher ground immediately if flooding begins or is expected.</li>
+            <li>Avoid driving through flooded roads as they may be unsafe.</li>
+            <li>After a flood, stay away from standing water to avoid contamination.</li>
+        </ul>
+    </div>
+
+    <!-- Collapsible General Guidelines Section -->
+    <div class="section">
+        <button class="collapsible">General Precautions</button>
+        <div class="content">
+            <ul class="precaution-list">
+                <li>Have an emergency kit with supplies like food, water, medication, and important documents.</li>
+                <li>Stay informed about potential disasters in your area through news, weather apps, and official alerts.</li>
+                <li>Create a family emergency plan, including meeting points and communication methods.</li>
+                <li>Keep your phone charged and have backup power sources like power banks.</li>
+                <li>Check and maintain your home’s safety features, like smoke alarms, first aid kits, and fire extinguishers.</li>
+            </ul>
+        </div>
+    </div>
+
+    <a href="#" class="btn">Back to Home</a>
+
+    <script>
+
+        // Function to share location
+        function shareLocation() {
+            if (navigator.geolocation) {
+                // Get current location of the user
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    // Coordinates from Geolocation API
+                    var latitude = position.coords.latitude;
+                    var longitude = position.coords.longitude;
+
+                    // You can send this location to the server here for further processing
+                    console.log('Latitude: ' + latitude + ', Longitude: ' + longitude);
+
+                    // Display the notification
+                    document.getElementById('locationNotification').style.display = 'block';
+
+                    // Optionally, you can hide the notification after a few seconds
+                    setTimeout(function() {
+                        document.getElementById('locationNotification').style.display = 'none';
+                    }, 5000);
+                }, function(error) {
+                    // Error handling if geolocation is denied or unavailable
+                    alert("Error: Unable to retrieve your location.");
+                });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+        // Dropdown display logic
+        function showDisasterInfo() {
+            var disaster = document.getElementById("disasterSelect").value;
+            var sections = ["earthquake", "storm", "cyclone", "flood"];
+            sections.forEach(function (section) {
+                document.getElementById(section).style.display = "none"; // Hide all sections
+            });
+            if (disaster) {
+                document.getElementById(disaster).style.display = "block"; // Show selected section
+            }
+        }
+
+        // Collapsible section logic
+        var coll = document.getElementsByClassName("collapsible");
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

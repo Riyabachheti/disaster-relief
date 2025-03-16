@@ -1,0 +1,605 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Relief Coordination</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .footer {
+            text-align: center;
+            color: #777;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Disaster Relief Coordination System</h1>
+
+    <h2>Victim and Volunteer Matching</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Victim ID</th>
+                <th>Volunteer ID</th>
+                <th>Resource Type</th>
+                <th>Distance (km)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in result_data %}
+                <tr>
+                    <td>{{ data.victim_id }}</td>
+                    <td>{{ data.volunteer_id }}</td>
+                    <td>{{ data.resource_type }}</td>
+                    <td>{{ data.distance }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="footer">
+        <p>&copy; 2025 Disaster Relief AI. All rights reserved.</p>
+    </div>
+</body>
+</html>
+
+ -->
+
+<!-- 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Relief Coordination</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+            margin: 0;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        h2 {
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+            font-size: 16px;
+        }
+
+        td {
+            font-size: 14px;
+        }
+
+        .footer {
+            text-align: center;
+            color: #777;
+            margin-top: 40px;
+        }
+
+        .intro-text {
+            font-size: 18px;
+            color: #555;
+            margin-top: 30px;
+            line-height: 1.6;
+        }
+
+        .info-box {
+            background-color: #eaf2f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .info-box h3 {
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .info-box ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Disaster Relief Coordination System</h1>
+
+    <div class="intro-text">
+        <p>Our Disaster Relief Coordination System uses advanced algorithms to efficiently match victims in need with available volunteers and resources. By optimizing distance, urgency, and resource availability, we aim to speed up the response times and provide aid where it's needed most.</p>
+    </div>
+
+    <h2>Victim and Volunteer Matching</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Victim ID</th>
+                <th>Volunteer ID</th>
+                <th>Resource Type</th>
+                <th>Distance (km)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in result_data %}
+                <tr>
+                    <td>{{ data.victim_id }}</td>
+                    <td>{{ data.volunteer_id }}</td>
+                    <td>{{ data.resource_type }}</td>
+                    <td>{{ data.distance }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="info-box">
+        <h3>How Our Smart Matching System Works:</h3>
+        <ul>
+            <li><strong>Resource Matching:</strong> Volunteers are matched to victims based on the type of resource required, such as food, medical supplies, or shelter.</li>
+            <li><strong>Distance Optimization:</strong> Volunteers closest to victims are prioritized to reduce the response time.</li>
+            <li><strong>Urgency Prioritization:</strong> Victims with high urgency are prioritized for quicker response.</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Disaster Relief AI. All rights reserved.</p>
+    </div>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Relief Coordination</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styles.css') }}">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 2.5rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h2 {
+            color: #3498db;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        table:hover {
+            transform: scale(1.02);
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        td {
+            background-color: #ffffff;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        td:hover {
+            background-color: #f9f9f9;
+        }
+
+        .footer {
+            text-align: center;
+            color: #777;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            color: #555;
+            margin-top: 30px;
+            line-height: 1.8;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .info-box {
+            background-color: #eaf2f8;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .info-box:hover {
+            transform: scale(1.03);
+        }
+
+        .info-box h3 {
+            color: #3498db;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+
+        .info-box ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Animation for fading in elements */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Disaster Relief Coordination System</h1>
+
+    <div class="intro-text">
+        <p>Our system leverages smart algorithms to match volunteers with victims, ensuring quick and efficient resource distribution during disasters. By optimizing distance, urgency, and available resources, we aim to save lives and alleviate suffering in crisis situations.</p>
+    </div>
+
+    <h2>Victim and Volunteer Matching</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Victim ID</th>
+                <th>Volunteer ID</th>
+                <th>Resource Type</th>
+                <th>Distance (km)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in result_data %}
+                <tr>
+                    <td>{{ data.victim_id }}</td>
+                    <td>{{ data.volunteer_id }}</td>
+                    <td>{{ data.resource_type }}</td>
+                    <td>{{ data.distance }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="info-box">
+        <h3>How Our Smart Matching System Works:</h3>
+        <ul>
+            <li><strong>Resource Matching:</strong> Volunteers are matched based on the type of resources required, such as food, medical supplies, or shelter.</li>
+            <li><strong>Distance Optimization:</strong> Volunteers located closest to victims are given priority for faster assistance.</li>
+            <li><strong>Urgency Prioritization:</strong> Victims with high urgency are matched first, ensuring the most critical cases are addressed immediately.</li>
+        </ul>
+    </div>
+
+    <a href="#" class="btn">Learn More</a>
+
+    <div class="footer">
+        <p>&copy; 2025 Disaster Relief AI. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
+ -->
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Relief Coordination</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styles.css') }}">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f4f6f9, #e2e8f0);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h2 {
+            color: #3498db;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 600;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            color: #555;
+            margin-top: 30px;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        table {
+            width: 90%;
+            margin: 40px auto;
+            border-collapse: collapse;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #fff;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        table:hover {
+            transform: scale(1.02);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            transition: background-color 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        th {
+            background-color: #c51313;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        td {
+            background-color: #ffffff;
+            color: #555;
+        }
+
+        td:hover {
+            background-color: #f9f9f9;
+        }
+
+        .footer {
+            text-align: center;
+            color: #777;
+            margin-top: 50px;
+            font-size: 1rem;
+            padding-bottom: 20px;
+        }
+
+        .info-box {
+            background-color: #eaf2f8;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+            border: 1px solid #ddd;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .info-box:hover {
+            transform: scale(1.03);
+        }
+
+        .info-box h3 {
+            color: #3498db;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .info-box ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            text-align: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #2980b9, #3498db);
+            transform: translateY(-2px);
+        }
+
+        /* Animation for fading in elements */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Disaster Relief Coordination System</h1>
+
+    <div class="intro-text">
+        <p>Our system leverages smart algorithms to match volunteers with victims, ensuring quick and efficient resource distribution during disasters. By optimizing distance, urgency, and available resources, we aim to save lives and alleviate suffering in crisis situations.</p>
+    </div>
+
+    <h2>Victim and Volunteer Matching</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Victim ID</th>
+                <th>Volunteer ID</th>
+                <th>Resource Type</th>
+                <th>Distance (km)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in result_data %}
+                <tr>
+                    <td>{{ data.victim_id }}</td>
+                    <td>{{ data.volunteer_id }}</td>
+                    <td>{{ data.resource_type }}</td>
+                    <td>{{ data.distance }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="info-box">
+        <h3>How Our Smart Matching System Works:</h3>
+        <ul>
+            <li><strong>Resource Matching:</strong> Volunteers are matched based on the type of resources required, such as food, medical supplies, or shelter.</li>
+            <li><strong>Distance Optimization:</strong> Volunteers located closest to victims are given priority for faster assistance.</li>
+            <li><strong>Urgency Prioritization:</strong> Victims with high urgency are matched first, ensuring the most critical cases are addressed immediately.</li>
+            <li><strong>Feedback Loop:</strong> Volunteers and victims can provide feedback to improve our system's effectiveness.</li>
+            <li><strong>Continuous Monitoring:</strong> Our team continuously monitors the situation to ensure proper coordination and prevent errors.</li>
+        </ul>
+    </div>
+
+    <a href="#" class="btn">Learn More</a>
+
+    <div class="footer">
+        <p>&copy; 2025 Disaster Relief AI. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
